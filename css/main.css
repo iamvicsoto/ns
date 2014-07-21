@@ -82,6 +82,50 @@ textarea {
     resize: vertical;
 }
 
+ul {
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+}
+
+ul > li {
+  padding: 5px;
+  float: left;
+}
+
+ul > li:after {
+  padding-left: 5px;
+
+}
+
+ul > li:last-child:after {
+  content: '';
+}
+
+ul.addPipe > li:after {
+    content: '|';
+}
+
+ul.addPipe > li:last-child:after {
+  content: '';
+}
+
+ul.normal-list {
+  list-style: none;
+}
+
+ul.normal-list > li {
+  padding: 1px;
+  float: none;
+}
+
+ul.normal-list > li:after {
+  content: '';
+}
+
+ul.normal-list > li:last-child:after {
+  content: '';
+}
 /* ==========================================================================
    Browse Happy prompt
    ========================================================================== */
@@ -98,20 +142,95 @@ textarea {
    ========================================================================== */
 
 
+.section-wrapper {
+  /*padding: 10px 0;*/
+}
 
 
+header {
+  background: rgba(255,93,177,1);
+  background: -moz-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,93,177,1)), color-stop(100%, rgba(239,1,124,1)));
+  background: -webkit-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,93,177,1) 0%, rgba(239,1,124,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c', GradientType=0 ); 
+}
 
+/*Main Heading*/
 
+#main-heading {
 
+}
 
+#main-heading .search-form {
+  margin: 7px 0 0 0;
+}
 
+#main-heading .search-form .form-group {
+  margin: 0;
+}
 
+/*Sub Heading*/
 
+#sub-heading {
+  padding: 10px 0;
+}
 
+/*Product INfo*/
 
+#product-info-wrapper {
 
+}
 
+#product-info-wrapper .product-heading {
+  padding: 10px 0;
+}
 
+#product-info-wrapper .product-images ul {
+
+}
+
+#product-info-wrapper .product-images ul > li {
+  /*width: 150px;*/
+  float: none;
+}
+
+#product-info-wrapper .product-images {
+  
+}
+
+#product-info-wrapper .product-info-content .product-details {
+  padding: 20px 0;
+  border-top: 1px solid black;
+}
+
+/*Newsletter*/
+
+#newsletter {
+  padding: 20px 0;
+  border-top: 1px solid black;
+}
+
+#newsletter .ads-newsletter {
+  display: table;
+}
+
+#newsletter .ads-newsletter-design {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100px;
+  background: green;
+  border-radius: 10px;
+}
+
+/*Footer*/
+
+#main-footer {
+  padding: 20px 0;
+  border-top: 1px solid black;
+}
 
 /* ==========================================================================
    Helper classes
