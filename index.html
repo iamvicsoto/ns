@@ -12,9 +12,12 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- Latest compiled and minified CSS -->
+
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -27,19 +30,31 @@
         <!-- start header -->
         <header id="main-heading" class="section-wrapper">
             <div class="container">
-                <div class="row">
+                <div class="clearfix">
                     <div class="pull-left">
                         <ul class="addPipe clearfix">
-                            <li>Welcome to <strong>goo</strong>! Claire</li>
-                            <li>Your Account</li>
-                            <li>Wish List (2)</li>
-                            <li>Shopping Basket (1)</li>
+                            <li class="hidden-xs">Welcome to <strong>goo</strong>! Claire</li>
+                            <li>
+                                <i class="fa fa-user"></i> 
+                                <span class="">Your Account</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-star-o"></i> 
+                                <span class="hidden-xs hidden-sm">Wish List </span>
+                                <span class="wish-list-count"> ( 2 )</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-shopping-cart"></i> 
+                                <span class="hidden-xs hidden-sm">Shopping Cart </span>
+                                <span class="shopping-cart-count"> ( 1 )</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="pull-right">
+                    <div class="search-wrapper pull-right">
                         <form class="search-form" role="form" novalidate>
                             <div class="form-group">
-                                <input type="text" class="form-control" value="search"/>
+                                <div class="search-icon"><i class="fa fa-search"></i></div>
+                                <input type="text" class="search-input form-control" placeholder="Search..." />
                             </div>
                         </form>
                     </div>
@@ -51,7 +66,7 @@
         <!-- start sub-heading -->
         <div id="sub-heading" class="section-wrapper">
             <div class="container">
-                <div class="row">
+                <div class="">
                     <div class="pull-right">
                         <strong>Call:</strong> 0800 458 77 26 
                         <strong>Email:</strong> <a href="">info@gooproducts.co.uk</a>
@@ -64,9 +79,9 @@
         <!-- start product-info -->
         <div id="product-info-wrapper" class="section-wrapper">
             <div class="product-info-content container">
-                <div class="row">
+                <div class="">
                     <div class="clearfix product-heading">
-                        <div class="col-md-6">
+<!--                         <div class="col-md-6">
                             <img src="img/company-logo.png"/>
                         </div>
                         <div class="col-md-6">
@@ -79,19 +94,91 @@
                                     <li>Contact goo</li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
+                        
+                        <nav class="navbar navbar-default" role="navigation">
+                          <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                              </button>
+                              <a class="clearfix navbar-brand" href="#"><img class="img-brand img-responsive" src="img/company-logo.png"/></a>
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                              <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Coffee Machines</a></li>
+                                <li><a href="#">Lava Lamps</a></li>
+                                <li><a href="#">About goo</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Contact goo</a></li>
+                              </ul>
+                            </div><!-- /.navbar-collapse -->
+                          </div><!-- /.container-fluid -->
+                        </nav>
                     </div>
                     <div class="clearfix product-details">
-                        <div class="product-images col-md-6">
-                            <ul class="clearfix">
-                                <li class="col-xs-3 col-sm-3 col-md-2 col-lg-3"><img class="img-responsive" src="img/product/img-1.jpg"></li>
-                                <li class="col-xs-3 col-sm-3 col-md-2 col-lg-3"><img class="img-responsive" src="img/product/img-2.jpg"></li>
-                                <li class="col-xs-3 col-sm-3 col-md-2 col-lg-3"><img class="img-responsive" src="img/product/img-3.jpg"></li>
-                                <li class="col-xs-3 col-sm-3 col-md-2 col-lg-3"><img class="img-responsive" src="img/product/img-4.jpg"></li>
-                            </ul>
+                        <div class="clearfix product-images col-md-6">
+                            <div class="clearfix">
+                                <div class="product-zoomThumb clearfix
+                                            col-xs-12
+                                            col-sm-offset-3 col-sm-9 
+                                            col-md-offset-3 col-md-9
+                                            col-lg-offset-3 col-lg-9">
+                                    <img id="zoomThumbDisplay" class="img-responsive" src="img/product/img-1.jpg"/>
+                                </div>
+                                <ul class="product-thumblist clearfix">
+                                    <li class="product-thumbitem col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <a href="#" data-toggle-zoomThumb="#zoomThumbDisplay">
+                                            <img src="img/product/img-1.jpg">
+                                        </a>
+                                    </li>
+                                    <li class="product-thumbitem col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <a href="#" data-toggle-zoomThumb="#zoomThumbDisplay">
+                                            <img src="img/product/img-2.jpg">
+                                        </a>
+                                    </li>
+                                    <li class="product-thumbitem col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <a href="#" data-toggle-zoomThumb="#zoomThumbDisplay">
+                                            <img src="img/product/img-3.jpg">
+                                        </a>
+                                    </li>
+                                    <li class="product-thumbitem col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <a href="#" data-toggle-zoomThumb="#zoomThumbDisplay">
+                                            <img src="img/product/img-4.jpg">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div></div>
+                            <div class="product-related clearfix">
+                                <h2>People also bought...</h2>
+                                <div class="product-related-item col-xs-6">
+                                    <a href="#">
+                                        <img class="img-responsive" src="img/coffee-beans.jpg">
+                                    </a>
+                                </div>
+                                <div class="product-related-item col-xs-6">
+                                    <a href="#">
+                                        <img class="img-responsive" src="img/mugs.jpg">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="product-detail-text-inner col-md-6">
+                            <span class="ribbon top-right ribbon-danger">
+                              <small>FREE DELIVERY</small>
+                            </span>
+                            <div class="product-id">
+                                <span>PN : 56821323 </span><span> IN STOCK</span>
+                            </div>
                             <h1>Senseo Coffee Machine</h1>
+                            <hr/>
                             <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
                             <h2>Product Specs</h2>
                             <p>Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
@@ -104,8 +191,8 @@
                                 <p class="price-retail">RRP $150.99</p>
                                 <p class="price-our-price">Our price $100.25</p>
                                 <div class="price-btn-group">
-                                    <button type="button" class="btn">ADD TO BASKET</button>
-                                    <button type="button" class="btn">CHECKOUT</button>
+                                    <button type="button" class="btn btn-base btn-pattern-1 brand-pink">+ ADD TO BASKET</button>
+                                    <button type="button" class="btn btn-base btn-pattern-1 brand-green">CHECKOUT</button>
                                 </div>
                             </div>
                         </div>
@@ -118,21 +205,27 @@
         <!-- start newsletter -->
         <div id="newsletter" class="section-wrapper">
             <div class="container">
-                <div class="row">
+                <div class="">
                     <div class="clearfix newsletter-inner">
-                        <div class="ads-newsletter col-md-8">
-                            <div class="ads-newsletter-design"> 
-                                <p>Make someone's CHRISTMAS</p>
-                                <p>Get your Christmas Gifts in NOW Spend 
-                                over $100 in December & receive 10% off in January</p>
+                        <div class="ads-newsletter col-md-6">
+                            <div class="brand-green ads-newsletter-design">
+                                <div></div>
+                                <div class="col-md-5">
+                                    <h1 class="text-center">Make someone's CHRISTMAS</h1> 
+                                </div>
+                                <div class="col-md-7">
+                                    <p class="text-center">Get your Christmas Gifts in NOW Spend 
+                                    over $100 in December & receive 10% off in January</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <p>Sign up for goo</p>
+                        <div class="newsletter-signup col-md-6">
+                            <h2>Sign up for goo</h2>
                             <p class="small">Sign up if you would like to receive monthly
                             newsletter from us.</p>
-                            <form role="form">
-                                <input type="text" value="Sign me Up"/>
+                            <form id="signup-form" role="form">
+                                <input type="text" class="form-control"/>
+                                <button type="submit" class="sign-up-btn-trigger">Sign Me Up</button>
                             </form>
                         </div>
                     </div>
@@ -144,14 +237,14 @@
         <!-- start main-footer -->
         <footer id="main-footer" class="small section-wrapper">
             <div class="container">
-                <div class="row">
-                    <div class="pull-left">
-                        Copyright 2012 Goo | Privacy Policy | We accept [] [] [] []
+                <!-- <div class="row"> -->
+                    <div class="copyright-sig pull-left">
+                        Copyright 2012 Goo | Privacy Policy | We accept <span><img src="img/payment-small.png"></span>
                     </div>
-                    <div class="pull-right">
+                    <div class="designed-by pull-right">
                         Designed & Implemented by <a href="">Clair Perrin</a>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </footer>
         <!-- end main-footer -->
