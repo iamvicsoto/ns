@@ -197,6 +197,12 @@ header {
   float: none;
 }
 
+@media screen and (max-width: 768px) {
+  #product-info-wrapper .product-images ul > li {
+    float: left;
+  }
+}
+
 #product-info-wrapper .product-images {
   
 }
